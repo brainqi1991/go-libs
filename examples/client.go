@@ -9,7 +9,7 @@ func main() {
 	client := &http.Client{}
 
 	var url string = "http://localhost:9091/user/login/1"
-	url = "http://test.com:8983/solr/rank-queen/select?q=*:*&fq=id:198784&wt=json&indent=true"
+	// url = "http://test.com:8983/solr/rank-queen/select?q=*:*&fq=id:198784&wt=json&indent=true"
 	response, _ := client.Get(url)
 	defer response.Body.Close()
 	fmt.Printf("返回信息 cookies: %v\n request: %v\n body: %v\n headers:%v\n\n\nStatusCode: %v\n",

@@ -1,4 +1,4 @@
-package utils
+package web
 
 import (
 	"go-awesome-webapp/model"
