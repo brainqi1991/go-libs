@@ -38,3 +38,19 @@ func Test_Base64Decode(t *testing.T) {
 		t.Logf("解码正确: %s --> %s\n", base64_encode, result)
 	}
 }
+
+func Test_CheckPassword(t *testing.T) {
+	var password = "brain2015"
+	// result, _ := bcrypt.GenerateFromPassword([]byte(password), 10)
+	result := CheckPassword("$2a$10$YV7FK97WIv17UbDxKwE5Su3apbJdUZrAXe9RSQE8TTACpyXvnx40m", password)
+	if result {
+		t.Log("不错不错，密码正确!")
+	} else {
+		t.Error("匹配不成功！")
+	}
+}
+
+func Test_HashSecurePassword(t *testing.T) {
+	var password = "brainqi"
+	t.Logf("原密码: %s\n Bcrypt加密后: %s", password, HasSecurePassword(password))
+}

@@ -5,6 +5,7 @@ import (
 	"crypto/sha1"
 	"encoding/base64"
 	"fmt"
+	"golang.org/x/crypto/bcrypt"
 	"io"
 )
 
@@ -33,4 +34,20 @@ func Base64DecodeString(data string) (string, error) {
 		return "", err
 	}
 	return string(b), err
+}
+
+// 校验用户输入的明文密码与数据库中查询得到的密码是否匹配
+func CheckPassword(password string, password_digest string) bool {
+	err := bcrypt.CompareHashAndPassword([]byte(password_digest), []byte(password))
+	if err != nil {
+		return true
+	} else {
+		return false
+	}
+}
+
+// 生成bcrypt加密后的密码
+func HasSecurePassword(password string) string {
+	password_digest, _ := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
+	return string(password_digest)
 }
