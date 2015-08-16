@@ -40,9 +40,9 @@ func Test_Base64Decode(t *testing.T) {
 }
 
 func Test_CheckPassword(t *testing.T) {
-	var password = "brain2015"
+	var password = "123"
 	// result, _ := bcrypt.GenerateFromPassword([]byte(password), 10)
-	result := CheckPassword("$2a$10$YV7FK97WIv17UbDxKwE5Su3apbJdUZrAXe9RSQE8TTACpyXvnx40m", password)
+	result := CheckPassword(password, "$2a$10$f6beSODaRVXw8FEfg2k0quuBiNqnOYh1lZIe4JCTpWqVjezxLxQuO")
 	if result {
 		t.Log("不错不错，密码正确!")
 	} else {

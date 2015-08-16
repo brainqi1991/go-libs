@@ -39,7 +39,7 @@ func Base64DecodeString(data string) (string, error) {
 // 校验用户输入的明文密码与数据库中查询得到的密码是否匹配
 func CheckPassword(password string, password_digest string) bool {
 	err := bcrypt.CompareHashAndPassword([]byte(password_digest), []byte(password))
-	if err != nil {
+	if err == nil {
 		return true
 	} else {
 		return false
