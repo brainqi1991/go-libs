@@ -36,6 +36,11 @@ func Test_GetCurrentTimeFormat(t *testing.T) {
 	t.Log(GetCurrentTimeFormat(TIME_FMT_CN))
 }
 
-// func Test_Elapse(t *testing.T) {
-// 	t.Logf("execute GetTimeStamp function time:%v", Elapse(GetTimestamp)
-// }
+// function without any arguments or returned values
+func play() {
+	// empty function
+}
+
+func Test_Elapse(t *testing.T) {
+	t.Logf("execute GetTimeStamp function nano time:%v", Elapse(play))
+}
