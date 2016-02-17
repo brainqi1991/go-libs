@@ -11,8 +11,10 @@ go get github.com/brainqi1991/go-libs
 - net
   + http
 - crypto
+  + base64
+  + bcrypt GenerateSecurePassword and CheckPassword
   + md5
   + sha1
-  + base64
+  + sha256
 - timeutils
   + data and time format

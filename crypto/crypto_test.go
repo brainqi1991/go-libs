@@ -16,6 +16,17 @@ func Test_Sha1(t *testing.T) {
 	t.Log("Sha1: " + result)
 }
 
+func Test_Sha256(t *testing.T) {
+	str := Sha256("brain")
+	result := "bbbf7a6412d6d3e8244ac1fda5e35a20037acee661288cb95b7b18cf469980aa"
+	t.Log(str)
+	if str == result {
+		t.Log("OK !")
+	} else {
+		t.Error("Not Equals !")
+	}
+}
+
 var base64_encode string
 
 func Test_Base64Encode(t *testing.T) {
