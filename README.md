@@ -14,3 +14,5 @@ go get github.com/brainqi1991/go-libs
   + md5
   + sha1
   + base64
+- timeutils
+  + data and time format
